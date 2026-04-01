@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متتبع مواصلاتي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <button id="langToggle">English</button>
+        <h2 id="title">سجل مواصلاتي</h2>
+    </header>
+
+    <main>
+        <canvas id="myChart" width="400" height="200"></canvas>
+        
+        <div id="logsContainer">
+            <p>لا توجد تسجيلات بعد...</p>
+        </div>
+    </main>
+
+    <div id="timerContainer" class="hidden">
+        <span id="stopwatch">00:00:00</span>
+        <button id="finishBtn">إنهاء</button>
+    </div>
+
+    <button id="fab">+</button>
+
+    <div id="optionsMenu" class="hidden">
+        <button onclick="startTrip('مترو')">مترو</button>
+        <button onclick="startTrip('ميكروباص')">ميكروباص</button>
+        <button onclick="startTrip('عربية')">عربية</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
