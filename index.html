@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متتبع مواصلاتي</title>
+    <title>Transport Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <button id="langToggle">English</button>
-        <h2 id="title">سجل مواصلاتي</h2>
-    </header>
+    <div class="app-card">
+        <header>
+            <button id="langToggle">English</button>
+        </header>
 
-    <main>
-        <canvas id="myChart" width="400" height="200"></canvas>
-        
-        <div id="logsContainer">
-            <p>لا توجد تسجيلات بعد...</p>
+        <div class="stats-section">
+            <div class="stat-item">
+                <span>الرحلة الحالية</span>
+                <span id="currentStatus">انتظار...</span>
+            </div>
         </div>
-    </main>
 
-    <div id="timerContainer" class="hidden">
-        <span id="stopwatch">00:00:00</span>
-        <button id="finishBtn">إنهاء</button>
+        <div class="transport-options">
+            <div class="option" onclick="startTrip('مترو')">
+                <div class="icon-circle"><i class="fas fa-subway"></i></div>
+                <span>مترو</span>
+            </div>
+            <div class="option" onclick="startTrip('ميكروباص')">
+                <div class="icon-circle"><i class="fas fa-bus"></i></div>
+                <span>ميكروباص</span>
+            </div>
+            <div class="option" onclick="startTrip('عربية')">
+                <div class="icon-circle"><i class="fas fa-car"></i></div>
+                <span>عربية</span>
+            </div>
+        </div>
+
+        <div class="timer-display" id="stopwatch">00:00:00</div>
+
+        <div class="actions">
+            <button id="finishBtn" class="btn-finish hidden">إنهاء الرحلة</button>
+            <button id="fab" class="fab"><i class="fas fa-plus"></i></button>
+        </div>
     </div>
-
-    <button id="fab">+</button>
-
-    <div id="optionsMenu" class="hidden">
-        <button onclick="startTrip('مترو')">مترو</button>
-        <button onclick="startTrip('ميكروباص')">ميكروباص</button>
-        <button onclick="startTrip('عربية')">عربية</button>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
